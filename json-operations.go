@@ -14,8 +14,10 @@ type students struct {
 	Age        int    `json:"age"`
 }
 
+const fileLocation = "./student.json"
+
 func readJson() (student []students) {
-	fileBytes, err := ioutil.ReadFile("./student.json")
+	fileBytes, err := ioutil.ReadFile(fileLocation)
 	//var student []students
 	if err != nil {
 		panic(err)
@@ -28,18 +30,19 @@ func readJson() (student []students) {
 }
 
 func writeJson() {
-	var input students
+	var studentData students
 	fmt.Println("Enter EnNo. First Name, Last Name, Department, Age ")
-	_, _ = fmt.Scan(&input.EnNo)
-	_, _ = fmt.Scan(&input.FirstName)
-	_, _ = fmt.Scan(&input.LastName)
-	_, _ = fmt.Scan(&input.Department)
-	_, _ = fmt.Scan(&input.Age)
-	infoByte, err := json.Marshal(input)
+	_, _ = fmt.Scan(&studentData.EnNo)
+	_, _ = fmt.Scan(&studentData.FirstName)
+	_, _ = fmt.Scan(&studentData.LastName)
+	_, _ = fmt.Scan(&studentData.Department)
+	_, _ = fmt.Scan(&studentData.Age)
+	userData := append(readJson(), studentData)
+	infoByte, err := json.Marshal(userData)
 	if err != nil {
 		panic(err)
 	}
-	err = ioutil.WriteFile("./student-updated.json", infoByte, 0644)
+	err = ioutil.WriteFile(fileLocation, infoByte, 0644)
 	if err != nil {
 		panic(err)
 	}

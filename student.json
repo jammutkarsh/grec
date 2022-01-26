@@ -1,79 +1,67 @@
-[
-  {
-    "enrollment": "en20cs301470",
-    "fName": "shreytam",
-    "lName": "goyal",
-    "department": "CSE",
-    "age": 18
-  },
-  {
-    "enrollment": "en20cs301471",
-    "fName": "soumya",
-    "lName": "agrawal",
-    "department": "CSE",
-    "age": 19
-  },
-  {
-    "enrollment": "en20cs301472",
-    "fName": "shubhi",
-    "lName": "khandelwal",
-    "department": "CSE",
-    "age": 19
-  },
-  {
-    "enrollment": "en20cs301473",
-    "fName": "simon",
-    "lName": "wadhwani",
-    "department": "CSE",
-    "age": 18
-  },
-  {
-    "enrollment": "en20cs301474",
-    "fName": "sneha",
-    "lName": "sharma",
-    "department": "CSE",
-    "age": 19
-  },
-  {
-    "enrollment": "en20cs301475",
-    "fName": "madhavi",
-    "lName": "gupta",
-    "department": "CSE",
-    "age": 17
-  },
-  {
-    "enrollment": "en20cs301476",
-    "fName": "sujal",
-    "lName": "samai",
-    "department": "CSE",
-    "age": 19
-  },
-  {
-    "enrollment": "en20cs301477",
-    "fName": "sweety",
-    "lName": "agrawal",
-    "department": "CSE",
-    "age": 20
-  },
-  {
-    "enrollment": "en20cs301478",
-    "fName": "vanshika",
-    "lName": "juneja",
-    "department": "CSE",
-    "age": 19
-  },
-  {
-    "enrollment": "en20cs301479",
-    "fName": "utkarsh",
-    "lName": "chourasia",
-    "department": "CSE",
-    "age": 20
-  },
-  {
-    "enrollment": "en20cs301480",
-    "fName": "tejas",
-    "lName": "shah",
-    "department": "CSE",
-    "age": 19
-  }
-]
+[{
+        "enrollment": "en20cs301471",
+        "fName": "soumya",
+        "lName": "agrawal",
+        "department": "CSE",
+        "age": 19
+}, {
+        "enrollment": "en20cs301472",
+        "fName": "shubhi",
+        "lName": "khandelwal",
+        "department": "CSE",
+        "age": 19
+}, {
+        "enrollment": "en20cs301473",
+        "fName": "simon",
+        "lName": "wadhwani",
+        "department": "CSE",
+        "age": 18
+}, {
+        "enrollment": "en20cs301474",
+        "fName": "sneha",
+        "lName": "sharma",
+        "department": "CSE",
+        "age": 19
+}, {
+        "enrollment": "en20cs301475",
+        "fName": "madhavi",
+        "lName": "gupta",
+        "department": "CSE",
+        "age": 17
+}, {
+        "enrollment": "en20cs301476",
+        "fName": "sujal",
+        "lName": "samai",
+        "department": "CSE",
+        "age": 19
+}, {
+        "enrollment": "en20cs301477",
+        "fName": "sweety",
+        "lName": "agrawal",
+        "department": "CSE",
+        "age": 20
+}, {
+        "enrollment": "en20cs301478",
+        "fName": "vanshika",
+        "lName": "juneja",
+        "department": "CSE",
+        "age": 19
+}, {
+        "enrollment": "en20cs301479",
+        "fName": "utkarsh",
+        "lName": "chourasia",
+        "department": "CSE",
+        "age": 20
+}, {
+        "enrollment": "en20cs301480",
+        "fName": "tejas",
+        "lName": "shah",
+        "department": "CSE",
+        "age": 19
+}, {
+        "enrollment": "en20cs301678",
+        "fName": "ujjwal",
+        "lName": "pawar",
+        "department": "CSE",
+        "age": 19
+}]
