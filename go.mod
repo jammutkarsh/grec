@@ -1,3 +1,3 @@
-module managing-json
+module app
 
 go 1.17

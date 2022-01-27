@@ -14,7 +14,7 @@ type students struct {
 	Age        int    `json:"age"`
 }
 
-const fileLocation = "./student.json"
+const fileLocation = "./.hidden/student.json"
 
 func readJson() (student []students) {
 	fileBytes, err := ioutil.ReadFile(fileLocation)
