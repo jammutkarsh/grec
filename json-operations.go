@@ -25,7 +25,6 @@ func readJson() (elements []string) {
 func writeJson() {
 	addCMD := flag.NewFlagSet("add", flag.ExitOnError)
 	data := addCMD.String("d", "", "enter the data")
-	// data is not getting the value.
 	err := addCMD.Parse(os.Args[2:])
 	element := append(readJson(), *data)
 	infoByte, err := json.Marshal(element)

@@ -3,7 +3,7 @@
 
 A simple CLI app for single data entry into a json file.
 
-[Demo](https://localhost)
+[image](https://github.com/JammUtkarsh/go-cli-records/blob/main/sample.png?raw=true)
 
 ## Pre-requisite
 
