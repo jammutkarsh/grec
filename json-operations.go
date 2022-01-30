@@ -2,43 +2,33 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io/ioutil"
+	"os"
 )
 
-type students struct {
-	EnNo       string `json:"enrollment"`
-	FirstName  string `json:"fName"`
-	LastName   string `json:"lName"`
-	Department string `json:"department"`
-	Age        int    `json:"age"`
-}
+const fileLocation = "./.hidden/lists.json"
 
-const fileLocation = "./.hidden/student.json"
-
-func readJson() (student []students) {
+func readJson() (elements []string) {
 	fileBytes, err := ioutil.ReadFile(fileLocation)
-	//var student []students
 	if err != nil {
 		panic(err)
 	}
-	err = json.Unmarshal(fileBytes, &student)
+	err = json.Unmarshal(fileBytes, &elements)
 	if err != nil {
 		panic(err)
 	}
-	return student
+	return elements
 }
 
 func writeJson() {
-	var studentData students
-	fmt.Println("Enter EnNo. First Name, Last Name, Department, Age ")
-	_, _ = fmt.Scan(&studentData.EnNo)
-	_, _ = fmt.Scan(&studentData.FirstName)
-	_, _ = fmt.Scan(&studentData.LastName)
-	_, _ = fmt.Scan(&studentData.Department)
-	_, _ = fmt.Scan(&studentData.Age)
-	userData := append(readJson(), studentData)
-	infoByte, err := json.Marshal(userData)
+	addCMD := flag.NewFlagSet("add", flag.ExitOnError)
+	data := addCMD.String("d", "", "enter the data")
+	// data is not getting the value.
+	err := addCMD.Parse(os.Args[2:])
+	element := append(readJson(), *data)
+	infoByte, err := json.Marshal(element)
 	if err != nil {
 		panic(err)
 	}
@@ -48,17 +38,9 @@ func writeJson() {
 	}
 }
 
-func display() {
-	metadata := readJson()
-	for _, data := range metadata {
-		//goland:noinspection GoPrintFunctions
-		fmt.Printf(
-			"| Enrollment No: %s | Name: %s %s | Department: %s | Age: %d |\n",
-			data.EnNo,
-			data.FirstName,
-			data.LastName,
-			data.Department,
-			data.Age,
-		)
+func list() {
+	readData := readJson()
+	for i, data := range readData {
+		fmt.Printf("|%d|\t%s\t|\n", i+1, data)
 	}
 }

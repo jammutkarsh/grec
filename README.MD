@@ -1,7 +1,7 @@
 
 # CLI Data Entry App
 
-A simple CLI app for data entry into a json file.
+A simple CLI app for single data entry into a json file.
 
 [Demo](https://localhost)
 
@@ -34,8 +34,3 @@ Run executable
 ```bash
   ./app
 ```
-
-## Lessons Learned
-
-An exploratory golang project for building CLI based apps.
-So I plan to gather knowledgeable with this test project.
