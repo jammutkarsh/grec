@@ -16,5 +16,7 @@ func main() {
 		writeJson()
 	case "list":
 		list()
+	case "clear":
+		clearJson()
 	}
 }

@@ -21,6 +21,11 @@ func readJson() (elements []string) {
 	}
 	return elements
 }
+func clearJson() {
+	clear := []byte("[]")
+	//out, _ := json.Marshal(clear)
+	_ = ioutil.WriteFile(fileLocation, clear, 0755)
+}
 
 func writeJson() {
 	addCMD := flag.NewFlagSet("add", flag.ExitOnError)
