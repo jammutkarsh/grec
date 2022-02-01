@@ -18,5 +18,7 @@ func main() {
 		list()
 	case "clear":
 		clearJson()
+	case "delete":
+		deleteObject()
 	}
 }

@@ -21,10 +21,33 @@ func readJson() (elements []string) {
 	}
 	return elements
 }
+
 func clearJson() {
 	clear := []byte("[]")
 	//out, _ := json.Marshal(clear)
 	_ = ioutil.WriteFile(fileLocation, clear, 0755)
+}
+
+func deleteObject() {
+	delCMD := flag.NewFlagSet("delete", flag.ExitOnError)
+	data := delCMD.Int("d", 0, "delete an entry")
+	err := delCMD.Parse(os.Args[2:])
+	if err != nil {
+		panic(err)
+	}
+	jsonObjects := readJson()
+	var newJsonObjects []string
+	for i, entry := range jsonObjects {
+		if *data-1 == i {
+			continue
+		}
+		newJsonObjects = append(newJsonObjects, entry)
+	}
+	infoByte, err := json.Marshal(newJsonObjects)
+	if err != nil {
+		panic(err)
+	}
+	err = ioutil.WriteFile(fileLocation, infoByte, 0644)
 }
 
 func writeJson() {
