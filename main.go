@@ -20,5 +20,9 @@ func main() {
 		clearJson()
 	case "delete":
 		deleteObject()
+	case "help":
+		help()
+	default:
+		help()
 	}
 }

@@ -31,6 +31,12 @@ func clearJson() {
 func deleteObject() {
 	delCMD := flag.NewFlagSet("delete", flag.ExitOnError)
 	data := delCMD.Int("d", 0, "delete an entry")
+	if len(os.Args) < 3 {
+		fmt.Print(`Options:	
+	-d [value]
+`)
+		os.Exit(0)
+	}
 	err := delCMD.Parse(os.Args[2:])
 	if err != nil {
 		panic(err)
@@ -52,7 +58,14 @@ func deleteObject() {
 
 func writeJson() {
 	addCMD := flag.NewFlagSet("add", flag.ExitOnError)
-	data := addCMD.String("d", "", "enter the data")
+	data := addCMD.String("d", "", "Enter some text.")
+	if len(os.Args) < 3 {
+		fmt.Print(`Options:	
+	-d [value]
+	-d "multiple values"
+`)
+		os.Exit(0)
+	}
 	err := addCMD.Parse(os.Args[2:])
 	element := append(readJson(), *data)
 	infoByte, err := json.Marshal(element)
@@ -70,4 +83,13 @@ func list() {
 	for i, data := range readData {
 		fmt.Printf("|%d|\t%s\t|\n", i+1, data)
 	}
+}
+
+func help() {
+	fmt.Print(`Commands:	
+	add    - to add data to the list.   
+	delete - to delete a single data entry to the list.   
+	list   - to display the list.   
+	clear  - to clear the list.  
+`)
 }

@@ -1,13 +1,14 @@
 
 # CLI Data Entry App
 
-A simple CLI app for single data entry into a json file.
+This a simple data entry app based on CLI. 
 
-![sampleImage](https://raw.githubusercontent.com/JammUtkarsh/go-cli-records/main/sample.png?raw=true)
+An experimental exploratory project for me to get familiar with golang and 
+CLI app building process. 
 
-## Pre-requisite
+## Requirements
 
-Download [Go](https://go.dev/doc/install)
+- [Go](https://golang.org/doc/install)
 
 ## Run Locally
 
@@ -33,4 +34,19 @@ Run executable
 
 ```bash
   ./app
+```
+
+Commands & flags
+
+```bash
+  # For help 
+  ./app help
+  # Only multi-word statements need "double quotes".
+  ./app add -d "Let's Goooo"   
+  # List all the entries.
+  ./app list   
+  # Delete a specific entry with its index.
+  ./app delete -d 4
+  # Delete the whole list.
+  ./app clear 
 ```
