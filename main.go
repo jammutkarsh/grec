@@ -6,6 +6,13 @@ import (
 )
 
 func main() {
+	if !FileExists(fileLocation) {
+		_, err := os.Create(fileLocation)
+		clear()
+		if err != nil {
+			panic(err)
+		}
+	}
 	if len(os.Args) < 2 {
 		fmt.Println("no commands provided")
 		os.Exit(1)
@@ -13,13 +20,13 @@ func main() {
 	cmd := os.Args[1]
 	switch cmd {
 	case "add":
-		writeJson()
+		add()
 	case "list":
 		list()
 	case "clear":
-		clearJson()
+		clear()
 	case "delete":
-		deleteObject()
+		delete()
 	case "help":
 		help()
 	default:

@@ -27,7 +27,7 @@ Go to the project directory
 Build executable
 
 ```bash
-  go build
+  go build -o app main.go json-operations.go
 ```
 
 Run executable

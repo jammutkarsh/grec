@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-const fileLocation = "./.hidden/lists.json"
+const fileLocation = "./.lists.json"
 
 func readJson() (elements []string) {
 	fileBytes, err := ioutil.ReadFile(fileLocation)
@@ -22,13 +22,13 @@ func readJson() (elements []string) {
 	return elements
 }
 
-func clearJson() {
+func clear() {
 	clear := []byte("[]")
 	//out, _ := json.Marshal(clear)
 	_ = ioutil.WriteFile(fileLocation, clear, 0755)
 }
 
-func deleteObject() {
+func delete() {
 	delCMD := flag.NewFlagSet("delete", flag.ExitOnError)
 	data := delCMD.Int("d", 0, "delete an entry")
 	if len(os.Args) < 3 {
@@ -56,7 +56,7 @@ func deleteObject() {
 	err = ioutil.WriteFile(fileLocation, infoByte, 0644)
 }
 
-func writeJson() {
+func add() {
 	addCMD := flag.NewFlagSet("add", flag.ExitOnError)
 	data := addCMD.String("d", "", "Enter some text.")
 	if len(os.Args) < 3 {
@@ -92,4 +92,12 @@ func help() {
 	list   - to display the list.   
 	clear  - to clear the list.  
 `)
+}
+
+func FileExists(filename string) bool {
+	info, err := os.Stat(filename)
+	if os.IsNotExist(err) {
+		return false
+	}
+	return !info.IsDir()
 }
