@@ -1,10 +1,10 @@
 
 # CLI Data Entry App
 
-This a simple data entry app based on CLI. 
+This a simple data entry app based on CLI.
 
-An experimental exploratory project for me to get familiar with golang and 
-CLI app building process. 
+An experimental exploratory project for me to get familiar with golang and
+CLI app building process.
 
 ## Requirements
 
@@ -15,7 +15,7 @@ CLI app building process.
 Clone the project
 
 ```bash
-  git clone https://github.com/JammUtkarsh/go-cli-records
+  git clone https://github.com/JammUtkarsh/grec
 ```
 
 Go to the project directory
@@ -44,7 +44,7 @@ Commands & flags
   # Only multi-word statements need "double quotes".
   ./app add -d "Let's Goooo"   
   # List all the entries.
-  ./app list   
+  ./app ls   
   # Delete a specific entry with its index.
   ./app delete -d 4
   # Delete the whole list.

@@ -1,3 +1,3 @@
-module github.com/JammUtkarsh/go-cli-records
+module github.com/JammUtkarsh/grec
 
 go 1.17

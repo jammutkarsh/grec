@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-const fileLocation = "./.lists.json"
+const fileLocation = ".lists.json"
 
 func readJson() (elements []string) {
 	fileBytes, err := ioutil.ReadFile(fileLocation)
@@ -24,7 +24,6 @@ func readJson() (elements []string) {
 
 func clear() {
 	clear := []byte("[]")
-	//out, _ := json.Marshal(clear)
 	_ = ioutil.WriteFile(fileLocation, clear, 0755)
 }
 
@@ -54,6 +53,9 @@ func delete() {
 		panic(err)
 	}
 	err = ioutil.WriteFile(fileLocation, infoByte, 0644)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func add() {
@@ -67,6 +69,9 @@ func add() {
 		os.Exit(0)
 	}
 	err := addCMD.Parse(os.Args[2:])
+	if err != nil {
+		panic(err)
+	}
 	element := append(readJson(), *data)
 	infoByte, err := json.Marshal(element)
 	if err != nil {

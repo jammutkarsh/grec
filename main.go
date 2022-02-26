@@ -21,7 +21,7 @@ func main() {
 	switch cmd {
 	case "add":
 		add()
-	case "list":
+	case "ls":
 		list()
 	case "clear":
 		clear()
