@@ -1,10 +1,10 @@
 
-# CLI Data Entry App
+# CLI Data Entry grec
 
-This a simple data entry app based on CLI.
+This a simple data entry grec based on CLI.
 
 An experimental exploratory project for me to get familiar with golang and
-CLI app building process.
+CLI grec building process.
 
 ## Requirements
 
@@ -27,26 +27,26 @@ Go to the project directory
 Build executable
 
 ```bash
-  go build -o app main.go json-operations.go
+  go build -o grec main.go json-operations.go
 ```
 
 Run executable
 
 ```bash
-  ./app
+  ./grec
 ```
 
 Commands & flags
 
 ```bash
   # For help 
-  ./app help
+  ./grec help
   # Only multi-word statements need "double quotes".
-  ./app add -d "Let's Goooo"   
+  ./grec add -d "Let's Goooo"   
   # List all the entries.
-  ./app ls   
+  ./grec ls   
   # Delete a specific entry with its index.
-  ./app delete -d 4
+  ./grec delete -d 4
   # Delete the whole list.
-  ./app clear 
+  ./grec clear 
 ```
