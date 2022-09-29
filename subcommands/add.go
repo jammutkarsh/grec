@@ -30,7 +30,7 @@ func Add() {
 	if err != nil {
 		log.Println(err)
 	}
-	err = ioutil.WriteFile(utils.GetFilePath(), infoByte, 0644)
+	err = ioutil.WriteFile(utils.GetDBFile(), infoByte, 0644)
 	if err != nil {
 		log.Println(err)
 	}

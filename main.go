@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"log"
+	"io/ioutil"
 	"os"
 
 	"github.com/JammUtkarsh/grec/subcommands"
@@ -10,12 +10,13 @@ import (
 )
 
 func init() {
-	utils.FileExists(utils.GetFilePath())
-	utils.FileExists(utils.GetConfigPath() + "logs.txt")
-	f, err := os.OpenFile(utils.GetConfigPath()+"logs.txt", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
-	log.SetOutput(f)
-	if err != nil {
-		fmt.Println(err)
+	utils.CreateConfigDir()
+	if utils.FileExists(utils.GetConfigPath() + "db.json") {
+		utils.CreateFile("db.json")
+		_ = ioutil.WriteFile(utils.GetDBFile(), []byte("[]"), 0755)
+	}
+	if utils.FileExists(utils.GetConfigPath() + "logs.txt") {
+		utils.CreateFile("logs.txt")
 	}
 }
 
@@ -31,6 +32,8 @@ func main() {
 		subcommands.Add()
 	case "ls":
 		subcommands.List()
+	case "paste":
+		subcommands.Paste()
 	case "clear":
 		subcommands.Clear()
 	case "delete":

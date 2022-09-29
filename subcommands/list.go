@@ -14,7 +14,5 @@ func List() {
 }
 func Paste() {
 	readData := utils.ReadJson()
-	for _, data := range readData {
-		fmt.Printf("%s", data)
-	}
+	fmt.Println(readData[len(readData)-1])
 }

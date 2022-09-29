@@ -7,6 +7,5 @@ import (
 )
 
 func Clear() {
-	clear := []byte("[]")
-	_ = ioutil.WriteFile(utils.GetFilePath(), clear, 0755)
+	_ = ioutil.WriteFile(utils.GetDBFile(), []byte("[]"), 0755)
 }

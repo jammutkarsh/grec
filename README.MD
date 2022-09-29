@@ -39,14 +39,16 @@ Run executable
 Commands & flags
 
 ```bash
-  # For help 
   ./grec help
-  # Only multi-word statements need "double quotes".
+  # For help 
   ./grec add -d "Let's Goooo"   
-  # List all the entries.
+  # Only multi-word statements need "double quotes".
   ./grec ls   
-  # Delete a specific entry with its index.
+  # List all the entries.
+  ./grec paste 
+  # outputs the last clip. 
   ./grec delete -d 4
-  # Delete the whole list.
+  # Delete a specific entry with its index.
   ./grec clear 
+  # Delete the whole list.
 ```

@@ -15,7 +15,7 @@ func PrettyJSON(v interface{}) (prettyJson string, err error) {
 }
 
 func ReadJson() (elements []string) {
-	fileBytes, err := ioutil.ReadFile(GetFilePath())
+	fileBytes, err := ioutil.ReadFile(GetDBFile())
 	if err != nil {
 		log.Println(err)
 	}
