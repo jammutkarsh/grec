@@ -4,12 +4,15 @@ import (
 	"fmt"
 
 	"github.com/JammUtkarsh/grec/utils"
+	"github.com/pterm/pterm"
 )
 
 func List() {
 	readData := utils.ReadJson()
-	for i, data := range readData {
-		fmt.Printf("|%d|\t%s\t|\n", i+1, data)
+	for _, data := range readData {
+		pterm.DefaultBulletList.WithItems([]pterm.BulletListItem{
+			{Level: 0, Text: data, TextStyle: pterm.NewStyle(pterm.FgWhite), BulletStyle: pterm.NewStyle(pterm.FgWhite)},
+		}).Render()
 	}
 }
 func Paste() {
